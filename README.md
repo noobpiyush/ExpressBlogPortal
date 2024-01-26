@@ -25,4 +25,5 @@ cd <repository-name>
 npm install
 
 # Start the server
-npm start
+npm run dev (client)
+node index.js (api)
