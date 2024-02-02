@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads",express.static(__dirname+ "/uploads"));
 
-mongoose.connect("MongoUrl")
+mongoose.connect("mongodb+srv://piyush:Cuting%40123@cluster0.fsovu8y.mongodb.net/BlogApp")
     .then(function () {
         console.log("db connected");
     })
