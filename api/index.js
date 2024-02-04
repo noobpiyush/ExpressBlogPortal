@@ -13,12 +13,17 @@ const multer = require("multer");
 const uploadMidddleWare = multer({ dest: 'uploads/' });
 const fs = require("fs");
 const Post = require("./models/Post");
+const path = require("path");
+const PORT = 4000
 
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: "*",
 }))
 app.use(express.json());
+const _dirname = path.dirname("");
+const buildpath = path.join(_dirname,"../client/dist/index.html");
+app.use(express.static(buildpath))
 app.use(cookieParser());
 app.use("/uploads",express.static(__dirname+ "/uploads"));
 
@@ -182,4 +187,4 @@ app.get("/post/:id", async (req,res)=>{
 
 
 
-app.listen(4000);
+app.listen(PORT);
